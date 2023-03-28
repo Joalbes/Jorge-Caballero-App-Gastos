@@ -1,36 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Control de gastos</title>
-</head>
-<body>
-    <h1>Mi Economía</h1>
-    <form action="">
-        Tipo de transacción:
-        <label for="ingreso">
+  </head>
+  <body>
+    <main class="flex flex-row justify-center items-start">
+    <section class="flex flex-col items-center justify-center h-screen">    
+      <!-- Formulario -->
+      <h1 class="font-bold  p-[0.5rem] px-[6.5rem] text-center bg-orange-400 ">Mi Economía</h1>
+      <form action="" name="formulario" class="flex flex-col items-center pb-[1.5rem] bg-orange-200 p-[1rem]">     
+        <!-- caja ingresos o egresos -->
+        <div class="flex flex-row items-center py-[1rem]">
+          <p class="px-[0.5rem]">Tipo de transacción:</p>
+          <!-- input ingreso -->
+          <label for=" ingreso">
             <span>Ingreso</span>
-            <input id="ingreso" type="radio">
-        </label>
-        <label for="egreso">
+            <input id="ingreso" name="typeTransaction" type="radio" />
+          </label>
+          <!-- input egreso -->
+          <label for="egreso" class="pl-[1rem]"
             <span>Egreso</span>
-            <input id="egreso" type="radio">
-        </label>
-        <label for="transactionDescription">
+            <input id="egreso" name="typeTransaction" type="radio"  />
+          </label>
+        </div>
+        <!-- caja descripcion monto Categoria -->
+        <div class="flex flex-col">
+          <!-- Descripcion de la tx a realizar -->
+          <label for="transactionDescription" class="py-[0.5rem]">
             <span>Descripción</span>
-            <input id="transactionDescription" type="text">
-        </label>
-        <label for="transactionAmount">
+            <input
+              id="transactionDescription"
+              name="transactionDescription"
+              type="text"
+              class="px-[0.5rem] rounded w-full"
+            />
+          </label>
+          <!-- MOnto de la tx -->
+          <label for="transactionAmount" class="py-[0.5rem]">
             <span>Monto</span>
-            <input id="transactionAmount" type="number">
-        </label>
-        <label for="transactionCategory">
+            <input
+              id="transactionAmount"
+              name="transactionAmount"
+              type="number"
+              class="px-[0.5rem] rounded w-full"
+            />
+          </label>
+          <!-- Categoria de la tx -->
+          <label for="transactionCategory" class="pt-[0.5rem] pb-[2rem]">
             <span>Categoria</span>
-            <input id="transactionCategory" type="text">
-        </label>
-        <input type="submit">
-    </form>    
-</body>
+            <input
+              id="transactionCategory"
+              name="transactionCategory"
+              type="text"
+              class="px-[0.5rem] rounded w-full"
+            />
+          </label>
+        </div>
+
+        <!-- Boton de enviar -->
+        <input type="submit"name="submit" class="py-[0.3rem] rounded bg-yellow-600 w-[5rem] " />
+      </form>
+</section>
+
+<!-- Creación de la tabla -->
+<section class="flex flex-row justify-center px-[2rem] pt-[7rem]">
+    <table>
+        <tr class="border-solid border-2 border-red-400">
+            <th class="p-[2rem] text-xl border-r-solid border-2 border-red-400">Transacción</th>
+            <th class="p-[2rem] text-xl border-r-solid border-2 border-red-400">Descripcion</th>
+            <th class="p-[2rem] text-xl border-r-solid border-2 border-red-400">Monto</th>
+            <th class="p-[2rem] text-xl border-r-solid border-2 border-red-400">Categoria</th>
+        </tr>
+        <tr class="border-solid">
+            <td class="p-[2rem] text-ls">Transacción</th>
+            <td class="p-[2rem] text-ls ">Descripcion</th>
+            <td class="p-[2rem] text-ls">Monto</th>
+            <td class="p-[2rem] text-ls">Categoria</th>
+        </tr>
+        
+    </table>
+</section>
+    </main>
+    
+  </body>
 </html>
